@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item name="categoryImage" type="id" />
+    <item name="action_navigation_home_to_cartFragment" type="id" />
+    <item name="btnProceedToCheckout" type="id" />
+</resources>

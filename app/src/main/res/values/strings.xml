@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Shopify</string>
+    <string name="title_home">Home</string>
+    <string name="title_dashboard">Dashboard</string>
+    <string name="title_notifications">Notifications</string>
+    <string name="price_format" />
+</resources>
