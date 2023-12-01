@@ -10,10 +10,16 @@ import androidx.annotation.NonNull;
 import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.bumptech.glide.Glide;
+
 
 public class HorizonatalCategoriesAdapter extends RecyclerView.Adapter<HorizonatalCategoriesAdapter.ViewHolder>{
-    private int[] images = {R.drawable.caro1, R.drawable.caro2, R.drawable.caro3, R.drawable.caro4, R.drawable.caro5,R.drawable.caro1, R.drawable.caro2, R.drawable.caro3, R.drawable.caro4, R.drawable.caro5};
 
+
+
+
+
+    int remote = 0;
 
     @NonNull
     @Override
@@ -27,27 +33,52 @@ public class HorizonatalCategoriesAdapter extends RecyclerView.Adapter<Horizonat
     @Override
     public void onBindViewHolder(@NonNull HorizonatalCategoriesAdapter.ViewHolder holder, int position) {
 
-            ImageView imageView=holder.itemView.findViewById(R.id.category1Image);
-            imageView.setImageResource(images[position]);
+            switch (remote) {
+                case 0 : {
+                    Glide.with(holder.itemView.getContext()).load(ShopDb.getInstance().Male[position]).into(holder.imageView);
+                    break;
+                }
+                case 1: {
+                    Glide.with(holder.itemView.getContext()).load(ShopDb.getInstance().Female[position]).into(holder.imageView);
+                    break;
+                }
+                case 2: {
+                    Glide.with(holder.itemView.getContext()).load(ShopDb.getInstance().Kids[position]).into(holder.imageView);
+                    break;
+                }
+            }
+
 
 
        holder.itemView.setOnClickListener(new View.OnClickListener() {
            @Override
            public void onClick(View v) {
-               Log.e("WELOCM",String.valueOf(position));
+               Log.e("POsoifijsijcio",String.valueOf(remote));
+               Log.e("POsoifijsijcio",String.valueOf(position));
+
            }
        });
     }
 
     @Override
     public int getItemCount() {
-        return 10;
+        return 5;
+    }
+
+    public void addDb(int male) {
+      remote = male;
+
+
+        notifyDataSetChanged();
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder {
+        ImageView imageView;
+        CardView cardView;
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
-            CardView cardView = itemView.findViewById(R.id.holder);
+             imageView=itemView.findViewById(R.id.category1Image);
+             cardView = itemView.findViewById(R.id.holder);
 
         }
     }

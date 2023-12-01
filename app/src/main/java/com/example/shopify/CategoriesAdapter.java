@@ -25,14 +25,31 @@ public class CategoriesAdapter extends RecyclerView.Adapter<CategoriesAdapter.Vi
         switch (position){
             case 0:{
                 textView.setText("Male");
+                holder.recyclerView =  holder.itemView.findViewById(R.id.horizontal_only);
+                holder.adapter = new HorizonatalCategoriesAdapter();
+                holder.adapter.addDb(0);
+                holder.recyclerView.setAdapter( holder.adapter);
+                holder.recyclerView.setLayoutManager(new LinearLayoutManager( holder.itemView.getContext(), LinearLayoutManager.HORIZONTAL, false));
+
+
                 break;
             }
             case 1: {
                 textView.setText("Female");
+                holder.recyclerView =  holder.itemView.findViewById(R.id.horizontal_only);
+                holder.adapter = new HorizonatalCategoriesAdapter();
+                holder.adapter.addDb(1);
+                holder.recyclerView.setAdapter( holder.adapter);
+                holder.recyclerView.setLayoutManager(new LinearLayoutManager( holder.itemView.getContext(), LinearLayoutManager.HORIZONTAL, false));
                 break;
             }
             case 2:{
                 textView.setText("KIds");
+                holder.recyclerView =  holder.itemView.findViewById(R.id.horizontal_only);
+                holder.adapter = new HorizonatalCategoriesAdapter();
+                holder.adapter.addDb(2);
+                holder.recyclerView.setAdapter( holder.adapter);
+                holder.recyclerView.setLayoutManager(new LinearLayoutManager( holder.itemView.getContext(), LinearLayoutManager.HORIZONTAL, false));
                 break;
             }
         }
@@ -47,12 +64,10 @@ public class CategoriesAdapter extends RecyclerView.Adapter<CategoriesAdapter.Vi
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder {
+        private RecyclerView recyclerView;
+        HorizonatalCategoriesAdapter adapter;
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
-            RecyclerView recyclerView = itemView.findViewById(R.id.horizontal_only);
-            HorizonatalCategoriesAdapter adapter = new HorizonatalCategoriesAdapter();
-            recyclerView.setAdapter(adapter);
-            recyclerView.setLayoutManager(new LinearLayoutManager(itemView.getContext(), LinearLayoutManager.HORIZONTAL, false));
 
            // recyclerView.setLayoutManager(new LinearLayoutManager(itemView.getContext()));
         }

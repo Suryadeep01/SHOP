@@ -23,4 +23,8 @@ public class CartItem {
     public int getItemImageResource() {
         return itemImageResource;
     }
+
+    public int getQuantity() {
+        return 0;
+    }
 }

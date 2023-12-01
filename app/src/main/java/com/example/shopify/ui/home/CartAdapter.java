@@ -5,6 +5,7 @@ import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -17,12 +18,13 @@ import com.example.shopify.ui.cart.CartItem;
 import java.util.List;
 
 public class CartAdapter extends RecyclerView.Adapter<CartAdapter.CartViewHolder> {
-
+    int quatity = 0;
     private List<CartItem> cartItems;
     private Context context;
 
     public CartAdapter(List<CartItem> cartItems, Context context) {
         this.cartItems = cartItems;
+        this.context = context;
     }
 
     @NonNull
@@ -34,10 +36,17 @@ public class CartAdapter extends RecyclerView.Adapter<CartAdapter.CartViewHolder
 
     @Override
     public void onBindViewHolder(@NonNull CartViewHolder holder, int position) {
-//        CartItem cartItem = cartItems.get(position);
 
-        // Set the data to the views
+        holder.incrementButton.setOnClickListener(view -> {
+            holder.quantityTextView.setText(String.valueOf(quatity++));
 
+
+
+        });
+
+        holder.decrementButton.setOnClickListener(view -> {
+            if(quatity >0)  holder.quantityTextView.setText(String.valueOf(quatity--));
+        });
     }
 
     @Override
@@ -50,6 +59,9 @@ public class CartAdapter extends RecyclerView.Adapter<CartAdapter.CartViewHolder
         TextView itemName;
         TextView itemPrice;
         ImageView itemImage;
+        TextView quantityTextView;
+        Button incrementButton;
+        Button decrementButton;
 
         public CartViewHolder(@NonNull View itemView) {
             super(itemView);
@@ -57,6 +69,9 @@ public class CartAdapter extends RecyclerView.Adapter<CartAdapter.CartViewHolder
             itemName = itemView.findViewById(R.id.itemName);
             itemPrice = itemView.findViewById(R.id.itemPrice);
             itemImage = itemView.findViewById(R.id.itemImage);
+            quantityTextView = itemView.findViewById(R.id.quantityTextView);
+            incrementButton = itemView.findViewById(R.id.btnAdd);
+            decrementButton = itemView.findViewById(R.id.btnSubtract);
         }
     }
 }

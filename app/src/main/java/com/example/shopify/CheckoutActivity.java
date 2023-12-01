@@ -2,12 +2,9 @@
 package com.example.shopify;
 
 import android.os.Bundle;
-import android.view.View;
-import android.widget.Button;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.shopify.ui.cart.CartItem;
@@ -27,24 +24,26 @@ public class CheckoutActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_checkout);
 
-        // Initialize the RecyclerView
-        cartRecyclerView = findViewById(R.id.cartRecyclerView);
-        cartRecyclerView.setLayoutManager(new LinearLayoutManager(this));
 
-        // Example: Populate the cart items (replace this with your actual data)
-        cartItemList = getCartItems();
-        cartAdapter = new CartAdapter(cartItemList, this);
-        cartRecyclerView.setAdapter(cartAdapter);
+//        // Initialize the RecyclerView
+//        cartRecyclerView = findViewById(R.id.cartRecyclerViewActivty);
+//
+//        // Example: Populate the cart items (replace this with your actual data)
+//        cartItemList = getCartItems();
+//        cartAdapter = new CartAdapter(cartItemList, this);
+//        cartRecyclerView.setAdapter(cartAdapter);
+//        cartRecyclerView.setLayoutManager(new LinearLayoutManager(this));
+
 
         // Example: Perform some action when the "Proceed to Checkout" button is clicked
-        Button btnProceedToCheckout = findViewById(R.id.btnProceedToCheckout);
-        btnProceedToCheckout.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                // Replace this with your actual checkout logic
-                placeOrder();
-            }
-        });
+//        Button btnProceedToCheckout = findViewById(R.id.btnProceedToCheckout);
+//        btnProceedToCheckout.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                // Replace this with your actual checkout logic
+//                placeOrder();
+//            }
+//        });
     }
 
     private List<CartItem> getCartItems() {
