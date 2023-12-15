@@ -1,6 +1,6 @@
 package com.example.shopify;
 
-import android.util.Log;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -53,8 +53,13 @@ public class HorizonatalCategoriesAdapter extends RecyclerView.Adapter<Horizonat
        holder.itemView.setOnClickListener(new View.OnClickListener() {
            @Override
            public void onClick(View v) {
-               Log.e("POsoifijsijcio",String.valueOf(remote));
-               Log.e("POsoifijsijcio",String.valueOf(position));
+               Intent  intent = new Intent(holder.itemView.getContext(),ProductDescriptionActivity.class);
+//               intent.putExtra("Category",String.valueOf(remote));
+//               intent.putExtra("product",String.valueOf(position));
+               intent.putExtra("Category", remote);
+               intent.putExtra("product", position);
+
+               holder.itemView.getContext().startActivity(intent);
 
            }
        });

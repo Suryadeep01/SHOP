@@ -2,6 +2,7 @@ package com.example.shopify;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
 import android.view.View;
 import android.widget.TextView;
 
@@ -18,13 +19,13 @@ public class SplashscreenActivity extends AppCompatActivity {
         TextView skipTextView = findViewById(R.id.skip_tv);
         TextView getStartedTextView = findViewById(R.id.next_arrow);
 
-        skipTextView.setOnClickListener(new View.OnClickListener() {
+
+        new Handler().postDelayed(new Runnable() {
             @Override
-            public void onClick(View v) {
-                // Handle skip logic (optional)
+            public void run() {
                 navigateToNextScreen();
             }
-        });
+        }, 1400);
 
         getStartedTextView.setOnClickListener(new View.OnClickListener() {
             @Override

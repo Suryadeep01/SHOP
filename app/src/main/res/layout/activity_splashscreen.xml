@@ -35,7 +35,7 @@
         android:textStyle="bold"
         android:textSize="35dp"
         android:layout_centerVertical="true"
-        android:fontFamily="@font/opensans_bold"
+        android:fontFamily="@font/poppins_semibold"
         android:layout_marginLeft="15dp"/>
 
 
@@ -43,7 +43,7 @@
         android:id="@+id/next_arrow"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Get Start"
+        android:text=""
         android:includeFontPadding="true"
         android:fontFamily="@font/opensans_bold"
         android:layout_alignParentBottom="true"

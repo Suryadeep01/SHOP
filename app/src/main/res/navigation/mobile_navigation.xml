@@ -10,11 +10,9 @@
         android:name="com.example.shopify.ui.home.HomeFragment"
         android:label="@string/title_home"
         tools:layout="@layout/fragment_home" >
-
         <action
-            android:id="@+id/action_navigation_home_to_cartFragment"
-            app:destination="@id/cartFragment" />
-
+            android:id="@+id/action_navigation_home_to_navigation_wish"
+            app:destination="@id/navigation_wish" />
     </fragment>
 
     <fragment
@@ -24,10 +22,10 @@
         tools:layout="@layout/fragment_notifications" />
 
     <fragment
-        android:id="@+id/cartFragment"
-        android:name="com.example.shopify.ui.cart.CartFragment"
+        android:id="@+id/navigation_wish"
+        android:name="com.example.shopify.ui.cart.WishListFragment"
         android:label="Cart"
-        tools:layout="@layout/fragment_cart" />
+        tools:layout="@layout/fragment_wish_list" />
     <action
         android:id="@+id/action_cartFragment_to_CheckoutActivity"
         app:destination="@id/action_cartFragment_to_CheckoutActivity" />

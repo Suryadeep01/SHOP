@@ -51,7 +51,7 @@ public class CartAdapter extends RecyclerView.Adapter<CartAdapter.CartViewHolder
 
     @Override
     public int getItemCount() {
-        return 10;
+        return 1;
     }
 
     public class CartViewHolder extends RecyclerView.ViewHolder {
